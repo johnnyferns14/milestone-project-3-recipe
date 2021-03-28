@@ -30,7 +30,8 @@ def user_registration():
     form = FormRegister()
     if form.validate_on_submit():
         return redirect(url_for("user_login"))
-    return render_template("user-registration.html", title="Sign Up", form=form)
+    return render_template(
+        "user-registration.html", title="Sign Up", form=form)
 
 
 @app.route('/recipe-editor')
@@ -39,4 +40,6 @@ def recipe_editor():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
