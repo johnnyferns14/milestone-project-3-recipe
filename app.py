@@ -39,19 +39,20 @@ def user_login():
 
 @app.route('/user-registration', methods=["POST", "GET"])
 def user_registration():
-    if request.method == "POST":
-        member_exists = mongo.db.members.find(
-            {"email": request.form.get("email").lower()})
-        if member_exists:
-            flash("User with same email id already exists")
-            return redirect(url_for("user_registration"))
-        member_info = {
-            "name": request.form.get("name").lower(),
-            "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-    # form = FormRegister()
-    # if form.validate_on_submit():
+    form = FormRegister()
+    if form.validate_on_submit():
+        if request.method == "POST":
+            member_exists = mongo.db.members.find(
+                {"email": request.form.get("email").lower()})
+            if member_exists:
+                flash("User with same email id already exists")
+                return redirect(url_for("user_registration"))
+            member_info = {
+                "name": request.form.get("name").lower(),
+                "email": request.form.get("email").lower(),
+                "password": generate_password_hash(request.form.get("password"))
+            }
+
     #     return redirect(url_for("user_login"))
     return render_template(
         "user-registration.html", title="Sign Up", form=form)
