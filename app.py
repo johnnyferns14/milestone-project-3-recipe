@@ -1,5 +1,7 @@
 import os
-from flask import Flask, render_template, redirect, url_for, flash, request, session
+from flask import (
+    Flask, render_template,
+    redirect, url_for, flash, request, session)
 from forms import FormLogin, FormRegister
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -17,7 +19,8 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    return render_template("index.html", title="Home Page")
+    members = mongo.db.members.find()
+    return render_template("index.html", title="Home Page", members=members)
 
 
 @app.route('/about')
