@@ -42,7 +42,7 @@ def user_registration():
     form = FormRegister()
     if form.validate_on_submit():
         if request.method == "POST":
-            member_exists = mongo.db.members.find(
+            member_exists = mongo.db.members.find_one(
                 {"email": request.form.get("email").lower()})
             if member_exists:
                 flash("User with same email id already exists")
@@ -50,8 +50,13 @@ def user_registration():
             member_info = {
                 "name": request.form.get("name").lower(),
                 "email": request.form.get("email").lower(),
-                "password": generate_password_hash(request.form.get("password"))
+                "password": generate_password_hash(request.form.get(
+                    "password"))
             }
+            mongo.db.members.insert_one(member_info)
+
+            session["member"] = request.form.get("name").lower()
+            flash("User registered successfully")
 
     #     return redirect(url_for("user_login"))
     return render_template(
@@ -61,6 +66,13 @@ def user_registration():
 @app.route('/recipe-editor')
 def recipe_editor():
     return render_template("recipe-editor.html", title="Recipe Editor")
+
+
+@app.route('/logout')
+def logout():
+    flash("Logged out!")
+    session.pop("user")
+    return redirect(url_for("user_login"))
 
 
 if __name__ == "__main__":
