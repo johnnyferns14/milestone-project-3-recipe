@@ -22,7 +22,8 @@ mongo = PyMongo(app)
 def index():
     members = mongo.db.members.find()
     recipies = mongo.db.recipies.find()
-    return render_template("index.html", title="Home Page", members=members, recipies=recipies)
+    return render_template(
+        "index.html", title="Home Page", members=members, recipies=recipies)
 
 
 @app.route('/about')
@@ -40,11 +41,13 @@ def user_login():
 
             if member_exists:
                 if check_password_hash(
-                        member_exists["password"], request.form.get("password")):
+                        member_exists["password"], request.form.get(
+                            "password")):
                     session["member"] = request.form.get("email").lower()
                     flash("Welcome {}, You are logged in." .format(
                         request.form.get("email")))
-                    return redirect(url_for("dashboard", email=session["member"]))
+                    return redirect(url_for(
+                        "dashboard", email=session["member"]))
                 else:
                     flash("Invalid email/password combination")
                     return redirect(url_for("user_login"))
