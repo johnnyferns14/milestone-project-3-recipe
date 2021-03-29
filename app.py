@@ -33,7 +33,22 @@ def about():
 def user_login():
     form = FormLogin()
     if form.validate_on_submit():
-        return redirect(url_for("index"))
+        if request.method == "POST":
+            member_exists = mongo.db.members.find_one(
+                {"email": request.form.get("email").lower()})
+
+            if member_exists:
+                if check_password_hash(
+                        member_exists["password"], request.form.get("password")):
+                    session["member"] = request.form.get("email").lower()
+                    flash("Welcome {}, You are logged in." .format(
+                        request.form.get("name")))
+                else:
+                    flash("Invalid email/password combination")
+                    return redirect(url_for("user_login"))
+            else:
+                flash("Invalid email/password combination")
+                return redirect(url_for("user_login"))
     return render_template("user-login.html", title="Login Page", form=form)
 
 
@@ -55,7 +70,7 @@ def user_registration():
             }
             mongo.db.members.insert_one(member_info)
 
-            session["member"] = request.form.get("name").lower()
+            session["member"] = request.form.get("email").lower()
             flash("User registered successfully")
 
     #     return redirect(url_for("user_login"))
