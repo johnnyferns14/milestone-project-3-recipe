@@ -21,7 +21,8 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     members = mongo.db.members.find()
-    return render_template("index.html", title="Home Page", members=members)
+    recipies = mongo.db.recipies.find()
+    return render_template("index.html", title="Home Page", members=members, recipies=recipies)
 
 
 @app.route('/about')
@@ -93,7 +94,7 @@ def recipe_editor():
 @app.route('/logout')
 def logout():
     flash("Logged out!")
-    session.pop("user")
+    session.pop("member")
     return redirect(url_for("user_login"))
 
 

@@ -48,18 +48,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About Us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('user_registration')}}">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('user_login')}}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('dashboard')}}">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
-                    </li>
+                    {% if session.member %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('dashboard', email=session['member'])}}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                        </li>
+                    {% else%}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('user_registration')}}">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('user_login')}}">Login</a>
+                        </li>
+                    {% endif%}
                 </ul>
                 <!-- Left links -->
             </div>

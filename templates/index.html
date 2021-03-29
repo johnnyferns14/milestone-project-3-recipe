@@ -2,9 +2,11 @@
 
 {% block content %}
 
-{% for member in members%}
-    {{ member.name }}
-    {{ member.email }}
+{% for recipe in recipies%}
+    {{ recipe.title }}<br>
+    {{ recipe.name }}<br>
+    {{ recipe.ingredients }}<br>
+    {{ recipe.direction }}<br>
 {% endfor %}
 
 <h1>Hello. I am Index</h1>
