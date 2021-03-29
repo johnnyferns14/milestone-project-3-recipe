@@ -42,7 +42,8 @@ def user_login():
                         member_exists["password"], request.form.get("password")):
                     session["member"] = request.form.get("email").lower()
                     flash("Welcome {}, You are logged in." .format(
-                        request.form.get("name")))
+                        request.form.get("email")))
+                    return redirect(url_for("dashboard", email=session["member"]))
                 else:
                     flash("Invalid email/password combination")
                     return redirect(url_for("user_login"))
@@ -72,10 +73,16 @@ def user_registration():
 
             session["member"] = request.form.get("email").lower()
             flash("User registered successfully")
-
-    #     return redirect(url_for("user_login"))
+            return redirect(url_for("dashboard", email=session["member"]))
     return render_template(
         "user-registration.html", title="Sign Up", form=form)
+
+
+@app.route('/dashboard')
+def dashboard(email):
+    email = mongo.db.members.find_one(
+        {"email": session["member"]})["email"]
+    return render_template("dashboard.html", title="Dashboard", email=email)
 
 
 @app.route('/recipe-editor')
