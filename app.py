@@ -83,7 +83,7 @@ def user_registration():
 
 
 @app.route('/dashboard')
-def dashboard(email):
+def dashboard():
     email = mongo.db.members.find_one(
         {"email": session["member"]})["email"]
     return render_template("dashboard.html", title="Dashboard", email=email)
