@@ -2,13 +2,35 @@
 
 {% block content %}
 
-{% for recipe in recipies%}
-    {{ recipe.title }}<br>
-    {{ recipe.name }}<br>
-    {{ recipe.ingredients }}<br>
-    {{ recipe.direction }}<br>
-{% endfor %}
 
-<h1>Hello. I am Index</h1>
+<div class="card-wrap">
+    {% for recipe in recipies%}
+        <div class="card mb-3" style="max-width: 540px">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
+                <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                </a>
+            </div>
+            <div class="card-body">
+                <div class="card-body">
+                    <h3 class="card-title">{{ recipe.title }}</h3>
+                    <h5 class="card-title">{{ recipe.description }}</h5>
+                    <ol>
+                        <h3>Direction</h3>
+                    {% for item in recipe.direction %}
+                    
+                    <li>{{ item }}</li>
+                    <!-- <h6 class="card-title">{{ recipe.direction[1] }}</h6> -->
+                    {% endfor %}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
 
 {% endblock content %}
