@@ -33,5 +33,5 @@ class FormRecipe(FlaskForm):
     ingredients = TextAreaField(
         "Ingredients", validators=[DataRequired(), Length(min=15)])
     directions = TextAreaField(
-        "Direction", validators=[DataRequired(), Length(min=15)])
+        "Directions", validators=[DataRequired(), Length(min=15)])
     save_recipe = SubmitField("save")

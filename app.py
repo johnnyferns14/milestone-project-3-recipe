@@ -2,7 +2,7 @@ import os
 from flask import (
     Flask, render_template,
     redirect, url_for, flash, request, session)
-from forms import FormLogin, FormRegister
+from forms import FormLogin, FormRegister, FormRecipe
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -91,7 +91,11 @@ def dashboard():
 
 @app.route('/recipe-editor')
 def recipe_editor():
-    return render_template("recipe-editor.html", title="Recipe Editor")
+    form = FormRecipe()
+    if form.validate_on_submit():
+        return redirect(url_for("dashboard", email=session["member"]))
+    return render_template(
+        "recipe-editor.html", title="Recipe Editor", form=form)
 
 
 @app.route('/logout')

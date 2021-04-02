@@ -2,6 +2,87 @@
 
 {% block content %}
 
-<h1>Hello. I am recipe editor</h1>
+<div class="wrapper d-flex justify-content-center">
+    <div class="card w-50 text-center">
+        <div class="card-body">
+        <h5 class="card-title">Add or Modify your recipe</h5>
+        <form method="POST" action="">
+            {{form.hidden_tag()}}
+
+            {%if form.title.errors%}
+            {%for error in form.email.errors%}
+            <span>{{error}}</span>
+            {%endfor%}
+            {%endif%}
+            <div class="form-outline mb-4">
+                {{form.title(class = "form-control")}}
+                {{form.title.label(class = "form-label")}}
+            </div>
+
+            {%if form.description.errors%}
+            {%for error in form.description.errors%}
+            <span>{{error}}</span>
+            {%endfor%}
+            {%endif%}
+            <div class="form-outline mb-4">
+                {{form.description(class = "form-control")}}
+                {{form.description.label(class = "form-label")}}
+            </div>
+            {%if form.category.errors%}
+            {%for error in form.category.errors%}
+            <span>{{error}}</span>
+            {%endfor%}
+            {%endif%}
+            <div class="form-outline mb-4">
+                {{form.category(class = "form-control")}}
+                {{form.category.label(class = "form-label")}}
+            </div>
+
+            {%if form.image_url.errors%}
+            {%for error in form.image_url.errors%}
+            <span>{{error}}</span>
+            {%endfor%}
+            {%endif%}
+            <div class="form-outline mb-4">
+                {{form.image_url(class = "form-control")}}
+                {{form.image_url.label(class = "form-label")}}
+            </div>
+
+            {%if form.ingredients.errors%}
+            {%for error in form.image_url.errors%}
+            <span>{{error}}</span>
+            {%endfor%}
+            {%endif%}
+            <div class="form-outline mb-4">
+                {{form.ingredients(class = "form-control")}}
+                {{form.ingredients.label(class = "form-label")}}
+            </div>
+
+            <!-- <div class="input_fields_wrap">
+                <button class="add_ingredients">Add</button>
+                <div><input type="text" name="mytext[]"></div>
+            </div> -->
+
+            {%if form.directions.errors%}
+            {%for error in form.image_url.errors%}
+            <span>{{error}}</span>
+            {%endfor%}
+            {%endif%}
+            <div class="form-outline mb-4">
+                {{form.directions(class = "form-control")}}
+                {{form.directions.label(class = "form-label")}}
+            </div>
+
+            <!-- <button id="add-direction">Add</button> -->
+
+            <!-- Submit button -->
+            {{form.save_recipe(class="btn btn-primary btn-block w-25")}}
+        </form>
+    </div>
+</div>
+</div>
+
 
 {% endblock content %}
+
+<script src="{{url_for('static', filename='./JS/main.js')}}"></script>
