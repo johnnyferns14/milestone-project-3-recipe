@@ -91,9 +91,8 @@ def dashboard():
 
 @app.route('/my-recipes')
 def my_recipes():
-    email = mongo.db.recipies.find_all(
-        {"email": session["member"]})["email"]
-    return render_template("dashboard.html", title="Dashboard", email=email)
+    mongo.db.recipies.find({session["member"]})
+    return render_template("my-recipes.html", title="My Recipes")
 
 
 @app.route('/recipe-editor', methods=["POST", "GET"])
@@ -116,6 +115,16 @@ def recipe_editor():
         return redirect(url_for("index"))
     return render_template(
         "recipe-editor.html", title="Recipe Editor", form=form)
+
+
+@app.route('/edit-recipe/<recipe_id>', methods=["POST", "GET"])
+def edit_recipe(recipe_id):
+    select_recipe = mongo.db.recipies.find_one(
+        {"_id": ObjectId(recipe_id)})
+
+    return render_template(
+        "edit-recipe.html", title="Recipe Editor", select_recipe=select_recipe)
+
 
 
 @app.route('/logout')

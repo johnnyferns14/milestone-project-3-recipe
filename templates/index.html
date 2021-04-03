@@ -6,11 +6,8 @@
 <div class="card-wrap">
     {% for recipe in recipies%}
         <div class="card mb-3" style="max-width: 540px">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <div class="bg-image">
                 <img src={{ recipe.image_url }} class="img-fluid" />
-                <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
             </div>
             <div class="card-body">
                 <div class="card-body">
