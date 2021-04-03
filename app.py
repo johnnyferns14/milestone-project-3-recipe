@@ -126,7 +126,6 @@ def edit_recipe(recipe_id):
         "edit-recipe.html", title="Recipe Editor", select_recipe=select_recipe)
 
 
-
 @app.route('/logout')
 def logout():
     flash("Logged out!")
