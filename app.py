@@ -105,8 +105,8 @@ def recipe_editor():
                 "description": request.form.get("description"),
                 "category": request.form.get("category"),
                 "image_url": request.form.get("image_url"),
-                "ingredients": request.form.get("ingredients"),
-                "directions": request.form.get("directions"),
+                "ingredients": request.form.getlist("ingredients"),
+                "directions": request.form.getlist("directions"),
                 "contributor": session["member"]
 
             }
