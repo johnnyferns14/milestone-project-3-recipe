@@ -27,7 +27,7 @@ class FormRecipe(FlaskForm):
     description = TextAreaField(
         "Description", validators=[DataRequired(), Length(min=40)])
     category = TextAreaField(
-        "Category", validators=[DataRequired(), Length(min=50)])
+        "Category", validators=[DataRequired(), Length(min=5)])
     image_url = StringField(
         "Image URL", validators=[DataRequired(), Length(min=15)])
     ingredients = TextAreaField(

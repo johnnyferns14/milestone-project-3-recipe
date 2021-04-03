@@ -89,11 +89,31 @@ def dashboard():
     return render_template("dashboard.html", title="Dashboard", email=email)
 
 
-@app.route('/recipe-editor')
+@app.route('/my-recipes')
+def my_recipes():
+    email = mongo.db.recipies.find_all(
+        {"email": session["member"]})["email"]
+    return render_template("dashboard.html", title="Dashboard", email=email)
+
+
+@app.route('/recipe-editor', methods=["POST", "GET"])
 def recipe_editor():
     form = FormRecipe()
     if form.validate_on_submit():
-        return redirect(url_for("dashboard", email=session["member"]))
+        if request.method == "POST":
+            recipe_info = {
+                "title": request.form.get("title"),
+                "description": request.form.get("description"),
+                "category": request.form.get("category"),
+                "image_url": request.form.get("image_url"),
+                "ingredients": request.form.get("ingredients"),
+                "directions": request.form.get("directions"),
+                "contributor": session["member"]
+
+            }
+            mongo.db.recipies.insert_one(recipe_info)
+            flash("Your recipe was successfully added.")
+        return redirect(url_for("index"))
     return render_template(
         "recipe-editor.html", title="Recipe Editor", form=form)
 
