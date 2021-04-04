@@ -2,21 +2,48 @@
 
 {% block content %}
 
+
+<div class="bar-wrapper">
+    <div class="input-group">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+        </div>
+        <button type="button" class="btn btn-success">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <div class="dropdown">
+        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            data-mdb-toggle="dropdown" aria-expanded="false">
+            Sort by
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Ascending</a></li>
+            <li><a class="dropdown-item" href="#">Descending</a></li>
+        </ul>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
-        <div class="card-wrap col-md-6">
+        <div class="card-wrap col-md-12">
         {% for recipe in recipies%}
             <div class="card mb-3" style="max-width: 540px">
 
                 <div class="card-body">
                     <div class="card-body">
                         <h3 class="card-title">{{ recipe.title }}</h3>
-                        <h6 class="card-title">- {{recipe.contributor}}</h6>
                         <div class="bg-image">
                             <img src="{{ recipe.image_url }}" class="img-fluid" />
                         </div>
-                
+                        <h6 class="card-title">By: {{recipe.contributor}}</h6>
 
+                
+                        {% for string in recipe.title %}
+                            <span>{{ string }}</span>
+                        {% endfor %}
                         <!-- <ol>
                             <h3>Ingredients</h3>
                                 {% for ingredient in recipe.ingredients %}

@@ -129,7 +129,6 @@ def edit_recipe(recipe_id):
     form = FormRecipe
     if form.validate_on_submit():
         if request.method == "POST":
-
             recipe_info = {
                 "title": request.form.get("title"),
                 "description": request.form.get("description"),
@@ -156,6 +155,14 @@ def delete_recipe(recipe_id):
         {"_id": ObjectId(recipe_id)})
     flash("Your recipe was successfully deleted.")
     return redirect(url_for("index"))
+
+
+# @app.route('/search-recipe/<search_string>', methods=["GET", "POST"])
+# def search_recipe(search_string):
+#     if request.method == "POST":
+#         search = mongo.db.recipies.find()
+#     flash("Your search results are displayed below:")
+#     return redirect(url_for("index"))
 
 
 @app.route('/logout')
