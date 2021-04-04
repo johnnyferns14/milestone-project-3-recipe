@@ -23,10 +23,10 @@ class FormLogin(FlaskForm):
 
 class FormRecipe(FlaskForm):
     title = StringField(
-        "Recipe Title", validators=[DataRequired(), Length(min=5, max=20)])
+        "Recipe Title", validators=[DataRequired(), Length(min=5, max=50)])
     description = TextAreaField(
-        "Description", validators=[DataRequired(), Length(min=40)])
-    category = TextAreaField(
+        "Description", validators=[DataRequired(), Length(min=20)])
+    category = StringField(
         "Category", validators=[DataRequired(), Length(min=5)])
     image_url = StringField(
         "Image URL", validators=[DataRequired(), Length(min=15)])
