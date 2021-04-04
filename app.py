@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     members = mongo.db.members.find()
-    recipies = mongo.db.recipies.find()
+    recipies = mongo.db.recipies.find().sort("title", -1)
     return render_template(
         "index.html", title="Home Page", members=members, recipies=recipies)
 
@@ -163,6 +163,22 @@ def delete_recipe(recipe_id):
 #         search = mongo.db.recipies.find()
 #     flash("Your search results are displayed below:")
 #     return redirect(url_for("index"))
+
+
+@app.route('/sort-ascending/<key_value>')
+def sort_ascending(key_value):
+
+    recipies = mongo.db.recipies.find().sort("title", 1)
+    return render_template(
+        "index.html", title="Home Page", recipies=recipies)
+
+
+@app.route('/sort-descending/<key_value>')
+def sort_descending(key_value):
+
+    recipies = mongo.db.recipies.find().sort("title", -1)
+    return render_template(
+        "index.html", title="Home Page", recipies=recipies)
 
 
 @app.route('/logout')
