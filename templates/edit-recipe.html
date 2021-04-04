@@ -6,7 +6,7 @@
     <div class="card w-50 text-center">
         <div class="card-body">
         <h5 class="card-title">Edit your recipe</h5>
-        <form method="POST" action="{{url_for(edit-task), recipe_id=recipe._id}}">
+        <form method="POST" action="{{url_for('edit_recipe'), recipe_id=recipe._id}}">
             {{form.hidden_tag()}}
 
             {%if form.title.errors%}
@@ -15,7 +15,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.title(class = "form-control")}}
+                {{form.title.data(class = "form-control")}}
                 {{form.title.label(class = "form-label")}}
             </div>
 
@@ -25,7 +25,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.description(class = "form-control")}}
+                {{form.description.data(class = "form-control")}}
                 {{form.description.label(class = "form-label")}}
             </div>
             {%if form.category.errors%}
@@ -34,7 +34,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.category(class = "form-control")}}
+                {{form.category.data(class = "form-control")}}
                 {{form.category.label(class = "form-label")}}
             </div>
 
@@ -44,7 +44,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.image_url(class = "form-control")}}
+                {{form.image_url.data(class = "form-control")}}
                 {{form.image_url.label(class = "form-label")}}
             </div>
 
@@ -54,7 +54,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.ingredients(class = "form-control")}}
+                {{form.ingredients.data(class = "form-control")}}
                 {{form.ingredients.label(class = "form-label")}}
             </div>
 
