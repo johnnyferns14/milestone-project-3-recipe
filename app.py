@@ -91,8 +91,11 @@ def dashboard():
 
 @app.route('/my-recipes')
 def my_recipes():
-    mongo.db.recipies.find({session["member"]})
-    return render_template("my-recipes.html", title="My Recipes")
+    members = mongo.db.members.find()
+    recipies = mongo.db.recipies.find()
+    return render_template(
+        "my-recipes.html",
+        title="My Recipes", members=members, recipies=recipies)
 
 
 @app.route('/recipe-editor', methods=["POST", "GET"])

@@ -1,7 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="card-wrap">
+    {% for recipe in recipies%}
+        {% if session.member|lower == recipe.contributor|lower %}
+        <div class="card mb-3" style="max-width: 540px">
+            <div class="bg-image">
+                <img src="{{ recipe.image_url }}" class="img-fluid" />
+            </div>
+            <div class="card-body">
+                <div class="card-body">
+                    <h3 class="card-title">{{ recipe.title }}</h3>
+                    <h5 class="card-title">{{ recipe.description }}</h5>
+                    <h6 class="card-title">Contributed by: {{recipe.contributor}}</h6>
+                
+                <div>
+                    <button>View</button>
 
-All my recipes listed here.
+                    <!-- <ol>
+                        <h3>Ingredients</h3>
+                            {% for ingredient in recipe.ingredients %}
+                                <li>{{ ingredient }}</li>
+                           
+                            {% endfor %}
+                        <h3>Direction</h3>
+                            {% for direction in recipe.directions %}
+                                <li>{{ direction }}</li>
+                            {% endfor %}
+                    </ol> -->
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
 
-{% endblock%}
+{% endblock %}
