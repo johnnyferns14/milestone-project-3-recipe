@@ -100,13 +100,14 @@ def recipe_editor():
     form = FormRecipe()
     if form.validate_on_submit():
         if request.method == "POST":
+
             recipe_info = {
                 "title": request.form.get("title"),
                 "description": request.form.get("description"),
                 "category": request.form.get("category"),
                 "image_url": request.form.get("image_url"),
-                "ingredients": request.form.getlist("ingredients"),
-                "directions": request.form.getlist("directions"),
+                "ingredients": request.form.get("ingredients").splitlines(),
+                "directions": request.form.get("directions").splitlines(),
                 "contributor": session["member"]
 
             }

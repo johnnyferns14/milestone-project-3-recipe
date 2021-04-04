@@ -14,7 +14,12 @@
                     <h3 class="card-title">{{ recipe.title }}</h3>
                     <h5 class="card-title">{{ recipe.description }}</h5>
                     <h6 class="card-title">"Contributed by: {{recipe.contributor}}"</h6>
-                    <ol>
+                
+                <div>
+                    <button>View</button>
+                </div>
+
+                    <!-- <ol>
                         <h3>Ingredients</h3>
                             {% for ingredient in recipe.ingredients %}
                                 <li>{{ ingredient }}</li>
@@ -24,7 +29,7 @@
                             {% for direction in recipe.directions %}
                                 <li>{{ direction }}</li>
                             {% endfor %}
-                    </ol>
+                    </ol> -->
                 </div>
             </div>
         </div>
