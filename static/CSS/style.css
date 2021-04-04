@@ -6,3 +6,15 @@
     display: flex;
     padding: 20px;
 }
+
+.red-bg{
+    color: rgb(252, 19, 19);
+}
+
+.green-bg{
+    color: rgb(13, 255, 13);
+}
+
+.align-space-top{
+    margin-top: 2rem;
+}

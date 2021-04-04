@@ -45,14 +45,17 @@ def user_login():
                             "password")):
                     session["member"] = request.form.get("email").lower()
                     flash("Welcome {}, You are logged in." .format(
-                        request.form.get("email")))
+                        request.form.get("email")), 'green-bg')
                     return redirect(url_for(
                         "dashboard", email=session["member"]))
                 else:
-                    flash("Invalid email/password combination")
+                    flash(
+                        "Invalid email/password combination",
+                        'red-bg')
                     return redirect(url_for("user_login"))
             else:
-                flash("Invalid email/password combination")
+                flash(
+                    "Invalid email/password combination", 'red-bg')
                 return redirect(url_for("user_login"))
     return render_template("user-login.html", title="Login Page", form=form)
 
@@ -98,8 +101,8 @@ def my_recipes():
         title="My Recipes", members=members, recipies=recipies)
 
 
-@app.route('/recipe-editor', methods=["POST", "GET"])
-def recipe_editor():
+@app.route('/add_recipe', methods=["POST", "GET"])
+def add_recipe():
     form = FormRecipe()
     if form.validate_on_submit():
         if request.method == "POST":
@@ -118,7 +121,7 @@ def recipe_editor():
             flash("Your recipe was successfully added.")
         return redirect(url_for("index"))
     return render_template(
-        "recipe-editor.html", title="Recipe Editor", form=form)
+        "add-recipe.html", title="Recipe Editor", form=form)
 
 
 @app.route('/edit-recipe/<recipe_id>', methods=["GET", "POST"])

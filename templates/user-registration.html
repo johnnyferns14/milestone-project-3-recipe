@@ -10,7 +10,7 @@
                 <!-- Name input -->
                 {%if form.name.errors%}
                 {%for error in form.name.errors%}
-                <span>{{error}}</span>
+                <span class="red-bg">{{error}}</span>
                 {%endfor%}
                 {%endif%}
                 <div class="form-outline mb-4">
@@ -20,7 +20,7 @@
 
                 {%if form.email.errors%}
                 {%for error in form.email.errors%}
-                <span>{{error}}</span>
+                <span class ="red-bg">{{error}}</span>
                 {%endfor%}
                 {%endif%}
                 <div class="form-outline mb-4">
@@ -30,7 +30,7 @@
 
                 {%if form.password.errors%}
                 {%for error in form.password.errors%}
-                <span>{{error}}</span>
+                <span class="red-bg">{{error}}</span>
                 {%endfor%}
                 {%endif%}
                 <div class="form-outline mb-4">
@@ -40,7 +40,7 @@
 
                 {%if form.confirm_password.errors%}
                 {%for error in form.confirm_password.errors%}
-                <span>{{error}}</span>
+                <span class="red-bg">{{error}}</span>
                 {%endfor%}
                 {%endif%}
                 <div class="form-outline mb-4">
