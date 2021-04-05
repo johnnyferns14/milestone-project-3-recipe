@@ -6,10 +6,10 @@
 <div class="bar-wrapper">
     <div class="input-group">
         <div class="form-outline">
-            <input type="search" id="form1" class="form-control" />
+            <input type="search" name="search" id="form1" class="form-control" />
             <label class="form-label" for="form1">Search</label>
         </div>
-        <button type="button" class="btn btn-success">
+        <button type="submit" class="btn btn-success">
             <i class="fas fa-search"></i>
         </button>
     </div>
@@ -40,21 +40,19 @@
                         </div>
                         <h6 class="card-title">By: {{recipe.contributor}}</h6>
 
-                
-                        {% for string in recipe.title %}
-                            <span>{{ string }}</span>
-                        {% endfor %}
-                        <!-- <ol>
+                        <ol>
                             <h3>Ingredients</h3>
                                 {% for ingredient in recipe.ingredients %}
                                     <li>{{ ingredient }}</li>
                             
                                 {% endfor %}
+                        </ol>
+                        <ol>    
                             <h3>Direction</h3>
                                 {% for direction in recipe.directions %}
                                     <li>{{ direction }}</li>
                                 {% endfor %}
-                        </ol> -->
+                        </ol>
                     </div>
                 </div>
             </div>

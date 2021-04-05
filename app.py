@@ -159,9 +159,9 @@ def delete_recipe(recipe_id):
 @app.route('/search-recipe', methods=["GET", "POST"])
 def search_recipe():
     if request.method == "POST":
-        search = mongo.db.recipies.find()
-    flash("Your search results are displayed below:")
-    return redirect(url_for("index"))
+        mongo.db.recipies.find()
+        flash("Your search results are displayed below:")
+        return redirect(url_for("index"))
 
 
 @app.route('/sort-ascending')
