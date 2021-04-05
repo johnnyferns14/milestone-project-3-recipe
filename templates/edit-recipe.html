@@ -15,7 +15,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.title.data(class = "form-control")}}
+                {{form.title(class = "form-control")}}
                 {{form.title.label(class = "form-label")}}
             </div>
 
@@ -25,7 +25,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.description.data(class = "form-control")}}
+                {{form.description(class = "form-control")}}
                 {{form.description.label(class = "form-label")}}
             </div>
             {%if form.category.errors%}
@@ -34,7 +34,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.category.data(class = "form-control")}}
+                {{form.category(class = "form-control")}}
                 {{form.category.label(class = "form-label")}}
             </div>
 
@@ -44,7 +44,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.image_url.data(class = "form-control")}}
+                {{form.image_url(class = "form-control")}}
                 {{form.image_url.label(class = "form-label")}}
             </div>
 
@@ -54,7 +54,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.ingredients.data(class = "form-control")}}
+                {{form.ingredients(class = "form-control")}}
                 {{form.ingredients.label(class = "form-label")}}
             </div>
 

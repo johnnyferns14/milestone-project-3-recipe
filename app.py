@@ -126,7 +126,7 @@ def add_recipe():
 
 @app.route('/edit-recipe/<recipe_id>', methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    form = FormRecipe
+    form = FormRecipe()
     if form.validate_on_submit():
         if request.method == "POST":
             recipe_info = {
@@ -144,9 +144,8 @@ def edit_recipe(recipe_id):
             flash("Your recipe was successfully updated.")
     recipe = mongo.db.recipies.find_one(
         {"_id": ObjectId(recipe_id)})
-
     return render_template(
-        "edit-recipe.html", title="Recipe Editor", recipe=recipe)
+        "edit-recipe.html", title="Recipe Editor", recipe=recipe, form=form)
 
 
 @app.route('/delete-recipe/<recipe_id>')
@@ -165,16 +164,16 @@ def delete_recipe(recipe_id):
 #     return redirect(url_for("index"))
 
 
-@app.route('/sort-ascending/<key_value>')
-def sort_ascending(key_value):
+@app.route('/sort-ascending')
+def sort_ascending():
 
     recipies = mongo.db.recipies.find().sort("title", 1)
     return render_template(
         "index.html", title="Home Page", recipies=recipies)
 
 
-@app.route('/sort-descending/<key_value>')
-def sort_descending(key_value):
+@app.route('/sort-descending')
+def sort_descending():
 
     recipies = mongo.db.recipies.find().sort("title", -1)
     return render_template(
