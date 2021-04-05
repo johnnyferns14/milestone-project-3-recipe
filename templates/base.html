@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-nav">
         <!-- Container wrapper -->
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">The Food House</a>
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                 data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample" aria-expanded="false"
@@ -65,6 +65,11 @@
         </div>
         <!-- Container wrapper -->
     </nav>
+
+    <section>
+    <div class="hero-image">
+        <img src="{{url_for('static', filename='food.jpg')}}" alt="travel-heroimage">
+    </div>
 
     <section>
         {% with messages = get_flashed_messages(with_categories=true) %}

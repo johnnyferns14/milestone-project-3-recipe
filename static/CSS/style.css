@@ -1,6 +1,16 @@
 .custom-nav{
     background-color: #00b74a;
 }
+
+.hero-image{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.hero-image img{
+    width: 100%;
+}
+
 .card .bg-image{
     padding: 10px 0px;
 }
@@ -14,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 20px;
     margin-right: 20px;
