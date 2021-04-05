@@ -6,7 +6,7 @@
     <div class="card w-50 text-center">
         <div class="card-body">
         <h5 class="card-title">Edit your recipe</h5>
-        <form method="POST" action="{{url_for('edit_recipe'), recipe_id=recipe._id}}">
+        <form method="POST" action="{{url_for('edit_recipe', recipe_id=recipe._id)}}">
             {{form.hidden_tag()}}
 
             {%if form.title.errors%}

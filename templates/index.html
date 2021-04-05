@@ -4,15 +4,18 @@
 
 
 <div class="bar-wrapper">
-    <div class="input-group">
-        <div class="form-outline">
-            <input type="search" name="search" id="form1" class="form-control" />
-            <label class="form-label" for="form1">Search</label>
+    <form method="GET" action="{{url_for('index')}}">
+        <div class="input-group">
+            <div class="form-outline">
+
+                <input type="search" name="search" id="form1" class="form-control" />
+                <label class="form-label" for="form1">Search</label>
+            </div>
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-search"></i>
+            </button>
         </div>
-        <button type="submit" class="btn btn-success">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
+    </form>
     <div class="dropdown">
         <a class="btn btn-success dropdown-toggle" role="button" id="dropdownMenuLink"
             data-mdb-toggle="dropdown" aria-expanded="false">

@@ -20,10 +20,14 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    members = mongo.db.members.find()
-    recipies = mongo.db.recipies.find()
+    search = request.args.get('search')
+    if search:
+        recipies = mongo.db.recipies.find(
+            {"$and": [{"$text": {'$search': search}}]})
+    else:
+        recipies = mongo.db.recipies.find()
     return render_template(
-        "index.html", title="Home Page", members=members, recipies=recipies)
+        "index.html", title="Home Page", recipies=recipies)
 
 
 @app.route('/about')
@@ -80,7 +84,7 @@ def user_registration():
 
             session["member"] = request.form.get("email").lower()
             flash("User registered successfully")
-            return redirect(url_for("dashboard", email=session["member"]))
+            return redirect(url_for("user_login", email=session["member"]))
     return render_template(
         "user-registration.html", title="Sign Up", form=form)
 
