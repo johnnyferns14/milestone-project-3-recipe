@@ -9,6 +9,44 @@
 <a href="{{url_for('add_recipe')}}" class="btn btn-success btn-sm">Add your recipe</a>
 </div>
 
+<div class="container">
+    <div class="row card-row">
+        {% for recipe in recipies %}
+        {% if session.member|lower == recipe.contributor|lower %}
+        <div class="card shadow recipe-custom-card mt-5">
+            <img src="{{ recipe.image_url }}" class="card-img-top image-style">
+            <div class="card-body">
+                <h4 class="card-title">{{ recipe.title }}</h4>
+                <small class="card-text">By: {{recipe.contributor}}</small>
+            </div>
+
+            <div>
+
+                <div class="text-center">
+
+                    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-success btn-sm">Edit</a>
+                    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+                        class="btn btn-success btn-sm">Delete</a>
+                </div>
+
+                <!-- <ol>
+                        <h3>Ingredients</h3>
+                            {% for ingredient in recipe.ingredients %}
+                                <li>{{ ingredient }}</li>
+                           
+                            {% endfor %}
+                        <h3>Direction</h3>
+                            {% for direction in recipe.directions %}
+                                <li>{{ direction }}</li>
+                            {% endfor %}
+                    </ol> -->
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
 <div class="card-wrap">
     {% for recipe in recipies%}
     {% if session.member|lower == recipe.contributor|lower %}

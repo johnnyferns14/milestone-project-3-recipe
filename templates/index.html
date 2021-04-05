@@ -30,6 +30,27 @@
 </div>
 
 <div class="container">
+    <div class="row card-row">
+        {% for recipe in recipies %}
+        <div class="card shadow recipe-custom-card mt-5">
+            <img src="{{ recipe.image_url }}" class="card-img-top image-style">
+            <div class="card-body">
+                <h4 class="card-title">{{ recipe.title }}</h4>
+                <small class="card-text">By: {{recipe.contributor}}</small>
+            </div>
+            <div class="col mb-3">
+                <a href="#" class="btn btn-reg">
+                    View Recipe
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<!-- 
+<div class="container">
     <div class="row">
         <div class="card-wrap col-md-12">
         {% for recipe in recipies%}
@@ -62,7 +83,7 @@
         {% endfor %}
         </div>
     </div>
-</div>
+</div> -->
 
 
 

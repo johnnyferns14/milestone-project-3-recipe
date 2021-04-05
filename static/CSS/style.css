@@ -19,6 +19,18 @@
     background-color: #FAEEC2;
 }
 
+.recipe-custom-card {
+    max-width: 400px;
+    margin: auto;
+    min-height: 300 px;
+}
+
+.image-style {
+    height: 200px;
+    object-fit: cover;
+}
+
+
 
 .bar-wrapper{
     display: flex;
