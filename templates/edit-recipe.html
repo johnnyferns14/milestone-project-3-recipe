@@ -15,8 +15,8 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.title(class = "form-control")}}
-                {{form.title.label(class = "form-label")}}
+                {{form.title(class = "form-control")}} value={{recipe.title}}
+                {{form.title.label(class = "form-label")}} 
             </div>
 
             {%if form.description.errors%}
@@ -25,7 +25,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.description(class = "form-control")}}
+                {{form.description(class = "form-control")}} {{recipe.description}}
                 {{form.description.label(class = "form-label")}}
             </div>
             {%if form.category.errors%}
@@ -34,7 +34,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.category(class = "form-control")}}
+                {{form.category(class = "form-control")}} {{recipe.category}}
                 {{form.category.label(class = "form-label")}}
             </div>
 
@@ -44,7 +44,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.image_url(class = "form-control")}}
+                {{form.image_url(class = "form-control")}} {{recipe.image_url}}
                 {{form.image_url.label(class = "form-label")}}
             </div>
 
@@ -54,7 +54,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.ingredients(class = "form-control")}}
+                {{form.ingredients(class = "form-control")}} {{recipe.ingredients}}
                 {{form.ingredients.label(class = "form-label")}}
             </div>
 
@@ -68,7 +68,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.directions(class = "form-control")}}
+                {{form.directions(class = "form-control")}} {{'/n'.join(recipe.directions)}}
                 {{form.directions.label(class = "form-label")}}
             </div>
 
