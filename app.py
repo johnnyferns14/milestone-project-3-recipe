@@ -51,7 +51,7 @@ def user_login():
                     flash("Welcome {}, You are logged in." .format(
                         request.form.get("email")), 'green-bg')
                     return redirect(url_for(
-                        "dashboard", email=session["member"]))
+                        "my_profile", email=session["member"]))
                 else:
                     flash(
                         "Invalid email/password combination",
@@ -96,7 +96,7 @@ def my_profile():
     members = mongo.db.members.find()
     recipies = mongo.db.recipies.find()
     return render_template(
-        "my-profile.html", title="Dashboard",
+        "my-profile.html", title="My Profile",
         name=name, members=members, recipies=recipies)
 
 
@@ -122,7 +122,7 @@ def add_recipe():
                 "image_url": request.form.get("image_url"),
                 "ingredients": request.form.get("ingredients").splitlines(),
                 "directions": request.form.get("directions").splitlines(),
-                "contributor": session["member"]["name"]
+                "contributor": session["member"]
 
             }
             mongo.db.recipies.insert_one(recipe_info)

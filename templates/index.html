@@ -3,6 +3,7 @@
 {% block content %}
 
 
+
 <div class="bar-wrapper">
     <form method="GET" action="{{url_for('index')}}">
         <div class="input-group">
@@ -29,6 +30,21 @@
     </div>
 </div>
 
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>At Food House, we strive to bring you some of the most delicious recipes on the planet.</h3>
+        </div>
+        <div class="col-md-6 img-align">
+            <img src="{{url_for('static', filename='images/Baked-Chicken-Breast-820-1.jpg')}}" alt="chicken-image">
+        </div>
+    </div>
+</div> -->
+
+<div class="mt-2 text-center">
+    <h3>A look at our most recent recipes:</h3>
+</div>
+
 <div class="container">
     <div class="row card-row">
         {% for recipe in recipies %}
@@ -47,35 +63,5 @@
         {% endfor %}
     </div>
 </div>
-
-
-<!-- 
-<div class="container">
-    <div class="row">
-        <div class="card-wrap col-md-12">
-        {% for recipe in recipies%}
-            <div class="card mb-3" style="max-width: 540px">
-
-                <div class="card-body">
-                    <div class="card-body">
-                        <h3 class="card-title">{{ recipe.title }}</h3>
-                        <div class="bg-image">
-                            <img src="{{ recipe.image_url }}" class="img-fluid" />
-                        </div>
-                        <h6 class="card-title">By: {{recipe.contributor}}</h6>
-
-                        
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-        </div>
-    </div>
-</div> -->
-
-
-
-
-
 
 {% endblock content %}
