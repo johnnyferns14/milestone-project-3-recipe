@@ -44,17 +44,17 @@ The recipe website where you can view recipes and add your own.
 
 -   ### Design
     -   #### Colour Scheme
-        -   The two main colours used are blue, and white.
+        -   The two main colours used are green and white with a beige addition to the cards.
     -   #### Typography
-        -   The Baskervilles font has been used for this website 
+        -   The Baskervilles font has been used for this website as it helps to read the recipes more clearly. 
     -   #### Imagery
-        -   The background image of a destination by the beach has been chosen to reflect the calm and serene nature where tourists can feel relaxed and out of all the stress.
+        -   The background image has been carefully selected so as to grab the users attention to the food items.
 
 *   ### Wireframes
 
-    -   Home Page Wireframe - [View](https://github.com/johnnyferns14/javascript-milestone-project-2/blob/master/assets/PDF/Figma%20Homepage%20wireframe.pdf)
+    -   Home Page Wireframe - [View]()
 
-    -   Mobile Wireframe - [View](https://github.com/johnnyferns14/javascript-milestone-project-2/blob/master/assets/PDF/Mobile%20wireframe.pdf)
+    -   Mobile Wireframe - [View]()
 
     - Information: The above are wireframes that were designed in the initial process. But as the project went on, changes were made to make every content look better and more attractive.
 
@@ -100,48 +100,59 @@ The recipe website where you can view recipes and add your own.
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/johnnyferns14/javascript-milestone-project-2/blob/master/assets/images/HTML%20Validator.jpg)
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/johnnyferns14/javascript-milestone-project-2/blob/master/assets/images/CSS%20Validator.jpg)
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
 
 ### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
 
-    1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
+    -   #### First Time Visitor Goals
 
-        1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the section of their choice. Below the navigation bar, is a video background that gives a good sense of communication.
-        2. The full aspect of the website is shown by the image which just stands out and puts across the actual idea of the website.
+        1. As a First Time Visitor, I want to want to make sure that I get the information I want based on the site description.
+            - Entering the website, the visitor is presented with the navbar that shows links to the home, login and sign up page. Below are the list of the recipies already added to the site. Also there is a search and sort section where the user can get the specific recipes based on his/her preference.
 
-    2. As a First Time Visitor, I want to be able to easily be able to navigate throughout the site to find content.
+        2. As a First Time Visitor, I want to be able to easily navigate throughout the site easily to find content I am looking for.
 
-        1. The site has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what the page they will end up at clearly.
-        2. The content on the page is appropriately placed so as to give a good visual feedback to the user.
-        3. On the Contact Us Page, after a form response is submitted, an alert shows up stating that their submission was a success.
+        3. As a First Time Visitor, I want to be able to sign up to be able to access the members area of the site.
+            - By clicking 'Sign Up' on the navigation bar link, the user is directed to the sign up page where they can enter their name, email id and password to register themselves.
 
-    3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their following on social media to determine how trusted and known they are.
-        1. Once the new visitor has read the About Us and services section, they will move on to the Testimonials section which give the users an understanding of what our esteemed clients think of us.
-        2. The user can also scroll to the bottom of any page on the site to locate social media links in the footer which have a slow transition when hovered over.
-        3. When clicked, the user is directed to the respective homepage of that site.
-        4. There is a 'Trips' section in the navigation bar which when clicked, will take the user to the trips page.
-        5. Here, the user will get the flight details such as origin, destination, departure date, flight and the price.
+        4. As a first time visitor, I want to be able to add my own content to the website.
+            - Once the user is registered and logged in, they can enter their own recipes in the 'Add recipe' section that shows up in the navigation bar once logged in.
 
--   #### Returning Visitor Goals
-   
-    1. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
 
-        1. The navigation bar clearly highlights the "Contact Us" Page.
-        2. Here they can fill out the form on the page.
-        3. The footer contains links to the organisations Facebook, Twitter, Linkedin and Instagram page.
-        4. Whichever link they click, it will be open up in a new tab to ensure the user can easily get back to the website.
-        5. The email button is set up to automatically open up your email app and autofill there email address in the "To" section.
+        5. As a first time visitor, I want to be able to easily login and logout from the site.
+            - The login and logout process is very simple. To log in, the user has to only enter their registered email id and password and click on the login button. To logout, they just need to click on the 'Logout' link on the navigation page which is visible only once logged in.
 
-    
+
+    -   #### Returning Visitor Goals
+
+        1. As a Returning Visitor, I want to be able to view the list of recipes.
+            - The users can easily vies the available recipes on the homepage. They can also search for recipes they like or even sort them by title.
+
+        2. As a Returning Visitor, I want to be able to view details of every recipe.
+            - On the list of recipe cards, when the user clicks on the 'View Recipe' button, they are redirected to the recipe details page where they can view the ingredients used as well as he directions/method of cooking.
+
+        3. As a Returning Visitor, I want to be able to sort them by title for easy access.
+            - In the homepage itself, the user is able to sort the recipes they want by title.
+
+        4. As a Returning Visitor, I want to be able to search specific recipes based on a query.
+            - The user can search for recipes based on title or description by entering the search keyword in the search field that is present in the homepage.
+
+        5. As a Returning Visitor, I want to have access to my posts.
+            - Every user has a dedicated profile page which shows the list of their contributions.
+
+        6. As a Returning Visitor, I want to be the only one who is able to edit/update or delete my own posts.
+            - Only the user that has logged in can edit or delete their own recipes. No other user has the access to others recipes.
+
+        7. As a Returning Visitor, I want to find community links.
+            - At the footer, there are links to the social community links.
+
 
 ### Further Testing
 
 -   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
--   Due to the limit of info in the api, the users will have to enter the Country codes instead of place name and currency code in caps. 
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
