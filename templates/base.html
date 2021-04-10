@@ -43,10 +43,10 @@
                     <!-- If logged in -->
                     {% if session.member %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('my_recipes')}}">My Recipes</a>
+                        <a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('dashboard', email=session['member'])}}">Dashboard</a>
+                        <a class="nav-link" href="{{url_for('my_profile', email=session['member'])}}">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('logout')}}">Logout</a>

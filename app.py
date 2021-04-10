@@ -89,11 +89,15 @@ def user_registration():
         "user-registration.html", title="Sign Up", form=form)
 
 
-@app.route('/dashboard')
-def dashboard():
-    email = mongo.db.members.find_one(
-        {"email": session["member"]})["email"]
-    return render_template("dashboard.html", title="Dashboard", email=email)
+@app.route('/my-profile')
+def my_profile():
+    name = mongo.db.members.find_one(
+        {"email": session["member"]})["name"]
+    members = mongo.db.members.find()
+    recipies = mongo.db.recipies.find()
+    return render_template(
+        "my-profile.html", title="Dashboard",
+        name=name, members=members, recipies=recipies)
 
 
 @app.route('/my-recipes')
@@ -118,7 +122,7 @@ def add_recipe():
                 "image_url": request.form.get("image_url"),
                 "ingredients": request.form.get("ingredients").splitlines(),
                 "directions": request.form.get("directions").splitlines(),
-                "contributor": session["member"]
+                "contributor": session["member"]["name"]
 
             }
             mongo.db.recipies.insert_one(recipe_info)
