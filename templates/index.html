@@ -39,7 +39,7 @@
                 <small class="card-text">By: {{recipe.contributor}}</small>
             </div>
             <div class="col mb-3">
-                <a href="#" class="btn btn-reg">
+                <a href="{{url_for('recipe_detail', recipe_id=recipe._id)}}" class="btn btn-reg">
                     View Recipe
                 </a>
             </div>
@@ -64,19 +64,7 @@
                         </div>
                         <h6 class="card-title">By: {{recipe.contributor}}</h6>
 
-                        <ol>
-                            <h3>Ingredients</h3>
-                                {% for ingredient in recipe.ingredients %}
-                                    <li>{{ ingredient }}</li>
-                            
-                                {% endfor %}
-                        </ol>
-                        <ol>    
-                            <h3>Direction</h3>
-                                {% for direction in recipe.directions %}
-                                    <li>{{ direction }}</li>
-                                {% endfor %}
-                        </ol>
+                        
                     </div>
                 </div>
             </div>

@@ -30,6 +30,11 @@
     object-fit: cover;
 }
 
+.recipe-detail {
+    margin: auto;
+    min-height: 300 px;
+}
+
 
 
 .bar-wrapper{

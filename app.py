@@ -160,6 +160,14 @@ def delete_recipe(recipe_id):
     return redirect(url_for("index"))
 
 
+@app.route('/recipe-detail/<recipe_id>')
+def recipe_detail(recipe_id):
+    recipies = mongo.db.recipies.find(
+        {"_id": ObjectId(recipe_id)})
+    return render_template(
+        "recipe-detail.html", title="Home Page", recipies=recipies)
+
+
 @app.route('/search-recipe', methods=["GET", "POST"])
 def search_recipe():
     if request.method == "POST":

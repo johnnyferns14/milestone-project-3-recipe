@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row card-row">
+        {% for recipe in recipies %}
+        <div class="card shadow recipe-detail mt-5">
+
+            <div class="card-body">
+                <h4 class="card-title">{{ recipe.title }}</h4>
+                <small class="card-text">By: {{recipe.contributor}}</small>
+            </div>
+            <img src="{{ recipe.image_url }}" class="card-img-top image-style">
+            <div>
+                <ol>
+                    <h3>Ingredients</h3>
+                    {% for ingredient in recipe.ingredients %}
+                    <li>{{ ingredient }}</li>
+                
+                    {% endfor %}
+                </ol>
+                <ol>
+                    <h3>Direction</h3>
+                    {% for direction in recipe.directions %}
+                    <li>{{ direction }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content %}

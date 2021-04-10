@@ -15,8 +15,10 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.title(class = "form-control")}} value={{recipe.title}}
-                {{form.title.label(class = "form-label")}} 
+            {% for recipe in recipies%}
+                {{form.title(class = "form-control", value ="{{ recipe.title }}")}}
+                {{form.title.label(class = "form-label")}}
+                {% endfor %} 
             </div>
 
             {%if form.description.errors%}
@@ -34,7 +36,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.category(class = "form-control")}} {{recipe.category}}
+                {{form.category(class = "form-control", value ="{{recipe.category}}")}}
                 {{form.category.label(class = "form-label")}}
             </div>
 
@@ -44,7 +46,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.image_url(class = "form-control")}} {{recipe.image_url}}
+                {{form.image_url(class = "form-control", value ="hi")}}
                 {{form.image_url.label(class = "form-label")}}
             </div>
 
@@ -54,7 +56,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.ingredients(class = "form-control")}} {{recipe.ingredients}}
+                {{form.ingredients(class = "form-control", value ="hi")}}
                 {{form.ingredients.label(class = "form-label")}}
             </div>
 
@@ -68,7 +70,7 @@
             {%endfor%}
             {%endif%}
             <div class="form-outline mb-4">
-                {{form.directions(class = "form-control")}} {{'/n'.join(recipe.directions)}}
+                {{form.directions(class = "form-control", value ="hi")}}
                 {{form.directions.label(class = "form-label")}}
             </div>
 
