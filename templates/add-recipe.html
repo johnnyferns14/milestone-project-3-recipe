@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<div class="wrapper d-flex justify-content-center">
+<div class="wrapper d-flex justify-content-center my-5">
     <div class="card w-50 text-center">
         <div class="card-body">
-            <h5 class="card-title">Add your recipe</h5>
+            <h5 class="card-title my-4">Add your recipe</h5>
             <form method="POST" action="">
                 {{form.hidden_tag()}}
 
@@ -76,7 +76,7 @@
                 </div>
 
                 <!-- Submit button -->
-                {{form.save_recipe(class="btn btn-success btn-block w-25")}}
+                {{form.save_recipe(class="btn btn-success w-50 text-center")}}
             </form>
         </div>
     </div>

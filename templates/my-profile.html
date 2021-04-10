@@ -2,8 +2,11 @@
 
 {% block content %}
 
-<span>{{ name }}'s area</span>
-<div class="container">
+<h3 class="my-5 text-center">Welcome to your profile page, {{ name }}</h3>
+
+<h4 class="mt-2 text-center">Below is a list of recipes added by you:</h4>
+
+<div class="container my-2">
     <div class="row card-row">
         {% for recipe in recipies %}
         {% if session.member|lower == recipe.contributor|lower %}
