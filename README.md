@@ -13,21 +13,34 @@ The recipe website where you can view recipes and add your own.
     -   #### First Time Visitor Goals
 
         1. As a First Time Visitor, I want to want to make sure that I get the information I want based on the site description.
+
         2. As a First Time Visitor, I want to be able to easily navigate throughout the site easily to find content I am looking for.
+        
         3. As a First Time Visitor, I want to be able to sign up to be able to access the members area of the site.
 
-        4. As a first time visitor, I want to e able to add my own content to the website.
+        4. As a first time visitor, I want to be able to add my own content to the website.
+
+        5. As a first time visitor, I want to be able to register on the site.
+
+        6. As a first time visitor, I want to be able to easily login and logout from the site.
+
 
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to have access to my posts. 
-        2. As a Returning Visitor, I want to be the only one who is able to edit/update or delete my own posts.
-        3. As a Returning Visitor, I want to find community links.
+        1. As a Returning Visitor, I want to be able to view the list of recipes.
 
-    -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any newly added packages or offers or if the company has moved in to offer other variety of travel services including car-hire, hotels, etc..
-        2. As a Frequent User, I want to check to see if there are any new blog posts.
-        3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+        2. As a Returning Visitor, I want to be able to view details of every recipe.
+
+        3. As a Returning Visitor, I want to be able to sort them by title for easy access.
+
+        4. As a Returning Visitor, I want to be able to search specific recipes based on a query.
+
+        5. As a Returning Visitor, I want to have access to my posts.
+
+        6. As a Returning Visitor, I want to be the only one who is able to edit/update or delete my own posts.
+
+        7. As a Returning Visitor, I want to find community links.
+
 
 -   ### Design
     -   #### Colour Scheme
