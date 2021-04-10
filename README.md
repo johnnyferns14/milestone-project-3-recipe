@@ -1,6 +1,6 @@
-<h1 align="center">The Food Warehouse</h1>
+<h1 align="center">The Food House</h1>
 
-[View the live project here.]()
+[View the live project here.](http://recipe-flask-johnny.herokuapp.com/)
 
 The recipe website where you can view recipes and add your own.
  

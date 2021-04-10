@@ -142,9 +142,9 @@ def edit_recipe(recipe_id):
                 "description": request.form.get("description"),
                 "category": request.form.get("category"),
                 "image_url": request.form.get("image_url"),
-                "ingredients": request.form.get("ingredients").splitlines(),
-                "directions": request.form.get("directions").splitlines(),
-                "contributor": session["member"]
+                "ingredients": request.form.get("ingredients"),
+                "directions": request.form.get("directions"),
+                "contributor": session['member']
 
             }
             mongo.db.recipies.update_one(
