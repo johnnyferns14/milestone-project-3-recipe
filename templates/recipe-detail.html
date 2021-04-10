@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row card-row">
         {% for recipe in recipies %}
-        <div class="card shadow recipe-detail mt-5">
+        <div class="card shadow recipe-detail my-5">
 
             <div class="card-body">
                 <h4 class="card-title">{{ recipe.title }}</h4>
@@ -14,14 +14,14 @@
             <img src="{{ recipe.image_url }}" class="card-img-top image-style">
             <div>
                 <ol>
-                    <h3>Ingredients</h3>
+                    <h3 class="mt-3 mb-1">Ingredients</h3>
                     {% for ingredient in recipe.ingredients %}
                     <li>{{ ingredient }}</li>
                 
                     {% endfor %}
                 </ol>
                 <ol>
-                    <h3>Direction</h3>
+                    <h3 class="mt-3 mb-1">Direction</h3>
                     {% for direction in recipe.directions %}
                     <li>{{ direction }}</li>
                     {% endfor %}

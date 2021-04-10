@@ -15,7 +15,7 @@ The recipe website where you can view recipes and add your own.
         1. As a First Time Visitor, I want to want to make sure that I get the information I want based on the site description.
 
         2. As a First Time Visitor, I want to be able to easily navigate throughout the site easily to find content I am looking for.
-        
+
         3. As a First Time Visitor, I want to be able to sign up to be able to access the members area of the site.
 
         4. As a first time visitor, I want to be able to add my own content to the website.
@@ -46,7 +46,7 @@ The recipe website where you can view recipes and add your own.
     -   #### Colour Scheme
         -   The two main colours used are blue, and white.
     -   #### Typography
-        -   The Baloo Paaji 2 font is the main font used throughout the whole website with cursive as the fallback font in case for any reason the font isn't being imported into the site correctly. The font is unique and gives a feeling of calmness. Also, it is both attractive and appropriate for the travel site.
+        -   The Baskervilles font has been used for this website 
     -   #### Imagery
         -   The background image of a destination by the beach has been chosen to reflect the calm and serene nature where tourists can feel relaxed and out of all the stress.
 
