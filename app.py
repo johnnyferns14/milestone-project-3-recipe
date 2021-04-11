@@ -134,27 +134,33 @@ def add_recipe():
 
 @app.route('/edit-recipe/<recipe_id>', methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    form = FormRecipe()
-    if form.validate_on_submit():
-        if request.method == "POST":
-            recipe_info = {
-                "title": request.form.get("title"),
-                "description": request.form.get("description"),
-                "category": request.form.get("category"),
-                "image_url": request.form.get("image_url"),
-                "ingredients": request.form.get("ingredients"),
-                "directions": request.form.get("directions"),
-                "contributor": session['member']
-
-            }
-            mongo.db.recipies.update_one(
-                {"_id": ObjectId(recipe_id)}, recipe_info)
-            flash("Your recipe was successfully updated.")
-    recipe = mongo.db.recipies.find_one(
-        {"_id": ObjectId(recipe_id)})
+    recipe = mongo.db.recipies.find_one({'_id': ObjectId(recipe_id)})
+    form = FormRecipe(request.POST, obj=recipe)
+    if request.POST and form.validate():
+        form.populate_obj(recipe)
     return render_template(
         "edit-recipe.html", title="Recipe Editor", recipe=recipe, form=form)
 
+# def edit_recipe(recipe_id):
+#     form = FormRecipe()
+#     if form.validate_on_submit():
+#         if request.method == "POST":
+#             recipe_info = {
+#                 "title": request.form.get("title"),
+#                 "description": request.form.get("description"),
+#                 "category": request.form.get("category"),
+#                 "image_url": request.form.get("image_url"),
+#                 "ingredients": request.form.get("ingredients"),
+#                 "directions": request.form.get("directions"),
+#                 "contributor": session['member']
+
+#             }
+#             mongo.db.recipies.update_one(
+#                 {"_id": ObjectId(recipe_id)}, recipe_info)
+#             flash("Your recipe was successfully updated.")
+#     recipe = mongo.db.recipies.find_one(
+#         {"_id": ObjectId(recipe_id)})
+    
 
 @app.route('/delete-recipe/<recipe_id>')
 def delete_recipe(recipe_id):
