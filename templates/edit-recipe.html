@@ -10,7 +10,7 @@
                 <!-- Recipe Title -->
                 <div class="form-outline mb-4">
                     <input class="form-control" id="title" name="title" required type="text"
-                        value="{{ recipe_title }}">
+                        value="{{ recipe.title }}">
                     <label class="form-label" for="title" style="margin-left: 0px;">Recipe Title</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
@@ -23,7 +23,7 @@
 
                 <div class="form-outline mb-4">
                     <textarea class="form-control" id="description" name="description"
-                        required="">{{ recipe_description }}</textarea>
+                        required="">{{ recipe.description }}</textarea>
                     <label class="form-label" for="description" style="margin-left: 0px;">Description</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
@@ -35,7 +35,7 @@
                 <!-- Recipe category -->
 
                 <div class="form-outline mb-4">
-                    <input class="form-control" id="category" name="category" required="" type="text" value="">
+                    <input class="form-control" id="category" name="category" required="" type="text" value="{{ recipe.category }}">
                     <label class="form-label" for="category" style="margin-left: 0px;">Category</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
@@ -47,7 +47,7 @@
                 <!-- Image URL field -->
 
                 <div class="form-outline mb-4">
-                    <input class="form-control" id="image_url" name="image_url" required="" type="text" value="">
+                    <input class="form-control" id="image_url" name="image_url" required="" type="text" value="{{ recipe.image_url }}">
                     <label class="form-label" for="image_url" style="margin-left: 0px;">Image URL</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
@@ -57,9 +57,9 @@
                 </div>
 
                 <!-- Ingredients field -->
-
+                
                 <div class="form-outline mb-4">
-                    <textarea class="form-control" id="ingredients" name="ingredients" required=""></textarea>
+                    <textarea class="form-control" id="ingredients" name="ingredients" required="">{{ "\n".join(recipe.ingredients) }}</textarea>
                     <label class="form-label" for="ingredients" style="margin-left: 0px;">Ingredients</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
@@ -71,7 +71,7 @@
                 <!-- Direction for preparation -->
 
                 <div class="form-outline mb-4">
-                    <textarea class="form-control" id="directions" name="directions" required=""></textarea>
+                    <textarea class="form-control" id="directions" name="directions" required="">{{ "\n".join(recipe.directions) }}</textarea>
                     <label class="form-label" for="directions" style="margin-left: 0px;">Directions</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
