@@ -30,16 +30,18 @@
     </div>
 </div>
 
-<!-- <div class="container">
+<div class="container my-5">
     <div class="row">
-        <div class="col-md-6">
-            <h3>At Food House, we strive to bring you some of the most delicious recipes on the planet.</h3>
+        <div class="col-md-6 my-3">
+            <h4>At Food House, we strive to bring you some of the most delicious recipes on the planet.
+                With our ever-growing list of contributors, you can be sure to find here what you are looking for.
+            </h4>
         </div>
         <div class="col-md-6 img-align">
             <img src="{{url_for('static', filename='images/Baked-Chicken-Breast-820-1.jpg')}}" alt="chicken-image">
         </div>
     </div>
-</div> -->
+</div>
 
 <div class="mt-2 text-center">
     <h3>A look at our most recent recipes:</h3>
@@ -49,12 +51,12 @@
     <div class="row card-row">
         {% for recipe in recipies %}
         <div class="card shadow recipe-custom-card mt-5">
-            <img src="{{ recipe.image_url }}" class="card-img-top image-style" alt="recipe-image">
+            <img src="{{ recipe.image_url }}" class="card-img-top image-style mt-2" alt="recipe-image">
             <div class="card-body">
                 <h4 class="card-title">{{ recipe.title }}</h4>
                 <small class="card-text">By: {{recipe.contributor}}</small>
             </div>
-            <div class="col mb-3 text-center">
+            <div class="col my-2 text-center">
                 <a href="{{url_for('recipe_detail', recipe_id=recipe._id)}}" class="btn btn-success">View Recipe</a>
             </div>
         </div>

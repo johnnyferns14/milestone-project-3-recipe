@@ -17,6 +17,11 @@ body{
     width: 100%;
 }
 
+.img-align img{
+    width: 100%;
+    height: auto;
+}
+
 .card .bg-image{
     padding: 10px 0px;
 }
@@ -44,12 +49,12 @@ body{
 
 .bar-wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
 }
 
 .red-bg{
