@@ -5,83 +5,87 @@
 <div class="wrapper d-flex justify-content-center my-5">
     <div class="card w-50 text-center">
         <div class="card-body">
-        <h5 class="card-title">Edit your recipe</h5>
-        <form method="POST" action="{{url_for('edit_recipe', recipe_id=recipe._id)}}">
-            {{form.hidden_tag()}}
-
+            <h5 class="card-title">Edit your recipe</h5>
+            <form method="POST" action="{{url_for('edit_recipe', recipe_id=recipe._id)}}">
                 <!-- Recipe Title -->
-            
-                {%if form.title.errors%}
-                {%for error in form.title.errors%}
-                <span>{{error}}</span>
-                {%endfor%}
-                {%endif%}
                 <div class="form-outline mb-4">
-                    {{form.title(class = "form-control")}}
-                    {{form.title.label(class = "form-label")}}
+                    <input class="form-control" id="title" name="title" required type="text"
+                        value="{{ recipe_title }}">
+                    <label class="form-label" for="title" style="margin-left: 0px;">Recipe Title</label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 70.4px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
                 </div>
 
                 <!-- Recipe Description -->
-                {%if form.description.errors%}
-                {%for error in form.description.errors%}
-                <span>{{error}}</span>
-                {%endfor%}
-                {%endif%}
+
                 <div class="form-outline mb-4">
-                    {{form.description(class = "form-control")}}
-                    {{form.description.label(class = "form-label")}}
+                    <textarea class="form-control" id="description" name="description"
+                        required="">{{ recipe_description }}</textarea>
+                    <label class="form-label" for="description" style="margin-left: 0px;">Description</label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 67.2px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
                 </div>
 
                 <!-- Recipe category -->
-                {%if form.category.errors%}
-                {%for error in form.category.errors%}
-                <span>{{error}}</span>
-                {%endfor%}
-                {%endif%}
+
                 <div class="form-outline mb-4">
-                    {{form.category(class = "form-control")}}
-                    {{form.category.label(class = "form-label")}}
+                    <input class="form-control" id="category" name="category" required="" type="text" value="">
+                    <label class="form-label" for="category" style="margin-left: 0px;">Category</label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 55.2px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
                 </div>
 
                 <!-- Image URL field -->
-                {%if form.image_url.errors%}
-                {%for error in form.image_url.errors%}
-                <span>{{error}}</span>
-                {%endfor%}
-                {%endif%}
+
                 <div class="form-outline mb-4">
-                    {{form.image_url(class = "form-control")}}
-                    {{form.image_url.label(class = "form-label")}}
+                    <input class="form-control" id="image_url" name="image_url" required="" type="text" value="">
+                    <label class="form-label" for="image_url" style="margin-left: 0px;">Image URL</label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 68px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
                 </div>
 
                 <!-- Ingredients field -->
-                {%if form.ingredients.errors%}
-                {%for error in form.image_url.errors%}
-                <span>{{error}}</span>
-                {%endfor%}
-                {%endif%}
+
                 <div class="form-outline mb-4">
-                    {{form.ingredients(class = "form-control")}}
-                    {{form.ingredients.label(class = "form-label")}}
+                    <textarea class="form-control" id="ingredients" name="ingredients" required=""></textarea>
+                    <label class="form-label" for="ingredients" style="margin-left: 0px;">Ingredients</label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 64.8px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
                 </div>
 
                 <!-- Direction for preparation -->
-                {%if form.directions.errors%}
-                {%for error in form.image_url.errors%}
-                <span>{{error}}</span>
-                {%endfor%}
-                {%endif%}
+
                 <div class="form-outline mb-4">
-                    {{form.directions(class = "form-control")}}
-                    {{form.directions.label(class = "form-label")}}
+                    <textarea class="form-control" id="directions" name="directions" required=""></textarea>
+                    <label class="form-label" for="directions" style="margin-left: 0px;">Directions</label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 60.8px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
                 </div>
 
-            <!-- Submit button -->
-            {{form.save_recipe(class="btn btn-success w-50")}}
-            
-        </form>
+                <!-- Submit button -->
+                <input class="btn btn-success w-50" id="save_recipe" name="save_recipe" type="submit" value="save">
+
+            </form>
+        </div>
     </div>
-</div>
 </div>
 
 
