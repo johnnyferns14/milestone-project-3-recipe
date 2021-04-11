@@ -49,7 +49,7 @@
     <div class="row card-row">
         {% for recipe in recipies %}
         <div class="card shadow recipe-custom-card mt-5">
-            <img src="{{ recipe.image_url }}" class="card-img-top image-style">
+            <img src="{{ recipe.image_url }}" class="card-img-top image-style" alt="recipe-image">
             <div class="card-body">
                 <h4 class="card-title">{{ recipe.title }}</h4>
                 <small class="card-text">By: {{recipe.contributor}}</small>
