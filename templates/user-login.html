@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block register %}
 
+<!-- User login form -->
 <div class="wrapper d-flex justify-content-center my-5">
     <div class="card w-50 text-center align-space-top">
         <div class="card-body">
@@ -8,6 +9,7 @@
         <form method="POST" action="">
             {{form.hidden_tag()}}
 
+            <!-- Email Id Field -->
             {%if form.email.errors%}
             {%for error in form.email.errors%}
             <span>{{error}}</span>
@@ -18,6 +20,7 @@
                 {{form.email.label(class = "form-label")}}
             </div>
 
+            <!-- Password Field -->
             {%if form.password.errors%}
             {%for error in form.password.errors%}
             <span>{{error}}</span>
@@ -27,6 +30,7 @@
                 {{form.password(class = "form-control")}}
                 {{form.password.label(class = "form-label")}}
             </div>
+            
             <!-- Submit button -->
             {{form.submit(class="btn btn-success w-50")}}
         </form>

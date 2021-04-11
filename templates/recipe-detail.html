@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- Recipe detail -->
 <div class="container">
     <div class="row card-row">
         {% for recipe in recipies %}
@@ -29,6 +30,7 @@
             </div>
         </div>
         {% endfor %}
+        <!-- Back to recipe list -->
         <div class="text-center mb-5">
             <a href="{{url_for('index')}}" class="btn btn-success btn-sm">Back to Recipes</a>
         </div>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block register %}
 
+<!-- Form for user registration -->
 <div class="wrapper d-flex justify-content-center my-5">
     <div class="card w-50 text-center align-space-top">
         <div class="card-body">
@@ -18,6 +19,7 @@
                     {{form.name.label(class = "form-label")}}
                 </div>
 
+                <!-- Email Id input -->
                 {%if form.email.errors%}
                 {%for error in form.email.errors%}
                 <span class ="red-bg">{{error}}</span>
@@ -28,6 +30,7 @@
                     {{form.email.label(class = "form-label")}}
                 </div>
 
+                <!-- Password input -->
                 {%if form.password.errors%}
                 {%for error in form.password.errors%}
                 <span class="red-bg">{{error}}</span>
@@ -38,6 +41,7 @@
                     {{form.password.label(class = "form-label")}}
                 </div>
 
+                <!-- Confirm Password input -->
                 {%if form.confirm_password.errors%}
                 {%for error in form.confirm_password.errors%}
                 <span class="red-bg">{{error}}</span>
@@ -47,6 +51,7 @@
                     {{form.confirm_password(class = "form-control")}}
                     {{form.confirm_password.label(class = "form-label")}}
                 </div>
+                
                 <!-- Submit button -->
                 {{form.submit(class="btn btn-success w-50")}}
             </form>

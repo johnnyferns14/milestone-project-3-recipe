@@ -2,11 +2,13 @@
 
 {% block content %}
 
+<!-- Form to edit recipe -->
 <div class="wrapper d-flex justify-content-center my-5">
     <div class="card w-50 text-center">
         <div class="card-body">
             <h5 class="card-title">Edit your recipe</h5>
             <form method="POST" action="{{url_for('edit_recipe', recipe_id=recipe._id)}}">
+
                 <!-- Recipe Title -->
                 <div class="form-outline mb-4">
                     <input class="form-control" id="title" name="title" required type="text"
@@ -20,7 +22,6 @@
                 </div>
 
                 <!-- Recipe Description -->
-
                 <div class="form-outline mb-4">
                     <textarea class="form-control" id="description" name="description"
                         required="">{{ recipe.description }}</textarea>
@@ -33,7 +34,6 @@
                 </div>
 
                 <!-- Recipe category -->
-
                 <div class="form-outline mb-4">
                     <input class="form-control" id="category" name="category" required="" type="text" value="{{ recipe.category }}">
                     <label class="form-label" for="category" style="margin-left: 0px;">Category</label>
@@ -45,9 +45,8 @@
                 </div>
 
                 <!-- Image URL field -->
-
                 <div class="form-outline mb-4">
-                    <input class="form-control" id="image_url" name="image_url" required="" type="text" value="{{ recipe.image_url }}">
+                    <input class="form-control" id="image_url" name="image_url" required type="text" value="{{ recipe.image_url }}">
                     <label class="form-label" for="image_url" style="margin-left: 0px;">Image URL</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
@@ -59,7 +58,7 @@
                 <!-- Ingredients field -->
                 
                 <div class="form-outline mb-4">
-                    <textarea class="form-control" id="ingredients" name="ingredients" required="">{{ "\n".join(recipe.ingredients) }}</textarea>
+                    <textarea class="form-control" id="ingredients" name="ingredients" required>{{ "\n".join(recipe.ingredients) }}</textarea>
                     <label class="form-label" for="ingredients" style="margin-left: 0px;">Ingredients</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
@@ -69,9 +68,8 @@
                 </div>
 
                 <!-- Direction for preparation -->
-
                 <div class="form-outline mb-4">
-                    <textarea class="form-control" id="directions" name="directions" required="">{{ "\n".join(recipe.directions) }}</textarea>
+                    <textarea class="form-control" id="directions" name="directions" required>{{ "\n".join(recipe.directions) }}</textarea>
                     <label class="form-label" for="directions" style="margin-left: 0px;">Directions</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>

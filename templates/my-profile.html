@@ -6,6 +6,7 @@
 
 <h4 class="mt-2 text-center">Below is a list of recipes added by you:</h4>
 
+<!-- Display only logged in user recipes -->
 <div class="container mb-5">
     <div class="row card-row">
         {% for recipe in recipies %}
@@ -17,10 +18,9 @@
                 <small class="card-text">By: {{ recipe.contributor }}</small>
             </div>
 
+            <!-- Edit and Delete buttons -->
             <div>
-
                 <div class="text-center my-2">
-
                     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-success btn-sm">Edit</a>
                     <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
                         class="btn btn-success btn-sm">Delete</a>
@@ -31,36 +31,5 @@
         {% endfor %}
     </div>
 </div>
-
-<div class="card-wrap">
-    {% for recipe in recipies%}
-    {% if session.member|lower == recipe.contributor|lower %}
-    <div class="card mb-3" style="max-width: 540px">
-        <div class="bg-image">
-            <img src="{{ recipe.image_url }}" class="img-fluid" />
-        </div>
-        <div class="card-body">
-            <div class="card-body">
-                <h3 class="card-title">{{ recipe.title }}</h3>
-                <h5 class="card-title">{{ recipe.description }}</h5>
-                <h6 class="card-title">Contributed by: {{recipe.contributor}}</h6>
-
-                <div>
-
-                    <div>
-
-                        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
-                            class="btn btn-success btn-sm">Edit</a>
-                        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
-                            class="btn btn-success btn-sm">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-    </div>
-</div>
-
 
 {% endblock content %}
