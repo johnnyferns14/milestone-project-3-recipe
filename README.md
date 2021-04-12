@@ -4,7 +4,7 @@
 
 The recipe website where you can view recipes and add your own.
  
-<h2 align="center"><img src="./static/images/Food-House.jpg"></h2>
+<h2 align="center"><img src="static/images/Food-House.png"></h2>
 
 ## User Experience (UX)
 
@@ -52,7 +52,11 @@ The recipe website where you can view recipes and add your own.
 
 *   ### Wireframes
 
-    -   Home Page Wireframe - [View](https://github.com/johnnyferns14/milestone-project-3-recipe/tree/master/static/images/HOME.jpg)
+    -   Home Page Wireframe - [View](static/images/Home.jpg)
+    -   Login Page Wireframe - [View](static/images/Login.jpg)
+    -   Registration Page Wireframe - [View](static/images/Register.jpg)
+    -   My Profile Page Wireframe - [View](static/images/My-Profile.jpg)
+    -   Recipe Details Page Wireframe - [View](static/images/Recipe-Details.jpg)
 
     -   Mobile Wireframe - [View]()
 
@@ -90,9 +94,9 @@ The recipe website where you can view recipes and add your own.
     - GitHub is used to store the projects code after being pushed from Git.
 7. [Figma:](https://figma.com/)
     - Figma was used to create the [wireframes](https://github.com/) during the design process.
-8.  [Flask:](https://flask.palletsprojects.com/)
+8. [Flask:](https://flask.palletsprojects.com/)
     - Flask was the web framework used to build the web application.
-9.  [MongoDB:](https://www.mongodb.com/)
+9. [MongoDB:](https://www.mongodb.com/)
     -MongoDB was used to store and retreive data from the database.
 
 
