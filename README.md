@@ -68,11 +68,25 @@ The recipe website where you can view recipes and add your own.
 
 -   Interactive elements.
 
+-   Defence coding has been utilised wherever possible. If the user has entered info which is not as per criteria, errors will be generated.
+
 -   Database connectivity.
 
 ## Project implementation
 
 -   The Homepage - Clicking on the website link directly points to the homepage where the user is presented with the hero-image af food items above where there is a navigation bar. On the navigation bar, the user is presented with the opportunity to login or sign up if unregistered. And below they can already view a list of recipes. They can get the recipe details when they click on the view button. In the homepage, they also have the ability to view content in a specific order or search for some recipe based on a keyword. 
+
+-   Login Page - The link for login page is available on the navigation bar. Here the user can enter their email id and password to log in. However, if not registered, they have to option to click sign up just below the Login Button. They will then be directed to the sign up page.
+
+-   Sign Up Page - The link for the sign up page can be accessible from either the navigation bar or on the login page. Here, the user needs to add details such as Fullname, Email id, password & confirm password. Once they sign p, they will be redirected to the login page.
+
+-   My Profile Page - This page can only be accessed once the user has successfully logged in. It welcomes the user to the site and displays recipes added by him/her. Here, the user has the ability to edit the recipes or delete them.
+
+-   Add Recipe Page - Once the user has logged in, they can access this page to add their own recipes to the database. They can add info like title, description, category, image-url, ingredients & method/direction.
+
+- Edit Recipe Page - This page is accessible from the My Profile page. When the user clicks on edit button, they are redirected to the edit page where the information from the database is alreads pre-poulated in the fields. They can easily perform their edit tasks.
+
+-   Delete Recipe - The user can delete the recipe they do not want featured by just clicking the delete button on the profile page.
 
 
 ## Technologies Used
@@ -162,11 +176,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ### Further Testing
 
 -   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
--   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+-   The website was viewed on a variety of devices such as Desktop, Laptop & Samsung S20 Plus.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
+
+-   The delete button when clicked directly deletes the record. There is no mechanism added to confirm the delete function.
 
 
 
