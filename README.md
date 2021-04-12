@@ -20,9 +20,9 @@ The recipe website where you can view recipes and add your own.
 
         4. As a first time visitor, I want to be able to add my own content to the website.
 
-        5. As a first time visitor, I want to be able to register on the site.
+        5. As a first time visitor, I want to be able to easily login and logout from the site.
 
-        6. As a first time visitor, I want to be able to easily login and logout from the site.
+        6. As a first time user, I want to be able to use the website on all devices.
 
 
     -   #### Returning Visitor Goals
@@ -84,10 +84,18 @@ The recipe website where you can view recipes and add your own.
 
 -   Add Recipe Page - Once the user has logged in, they can access this page to add their own recipes to the database. They can add info like title, description, category, image-url, ingredients & method/direction.
 
-- Edit Recipe Page - This page is accessible from the My Profile page. When the user clicks on edit button, they are redirected to the edit page where the information from the database is alreads pre-poulated in the fields. They can easily perform their edit tasks.
+-   Edit Recipe Page - This page is accessible from the My Profile page. When the user clicks on edit button, they are redirected to the edit page where the information from the database is alreads pre-poulated in the fields. They can easily perform their edit tasks.
 
 -   Delete Recipe - The user can delete the recipe they do not want featured by just clicking the delete button on the profile page.
 
+
+## Future implementation
+
+-   Option to have an admin.
+-   Option to add categories as a dropdown list.
+-   Option to add comments and reviews.
+-   Adding a rating feature.
+-   Share recipe on social networks.
 
 ## Technologies Used
 
@@ -137,6 +145,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
             - Entering the website, the visitor is presented with the navbar that shows links to the home, login and sign up page. Below are the list of the recipies already added to the site. Also there is a search and sort section where the user can get the specific recipes based on his/her preference.
 
         2. As a First Time Visitor, I want to be able to easily navigate throughout the site easily to find content I am looking for.
+            - The website is navigation friendly. The user can easily move from one page to another.
 
         3. As a First Time Visitor, I want to be able to sign up to be able to access the members area of the site.
             - By clicking 'Sign Up' on the navigation bar link, the user is directed to the sign up page where they can enter their name, email id and password to register themselves.
@@ -147,6 +156,9 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
         5. As a first time visitor, I want to be able to easily login and logout from the site.
             - The login and logout process is very simple. To log in, the user has to only enter their registered email id and password and click on the login button. To logout, they just need to click on the 'Logout' link on the navigation page which is visible only once logged in.
+
+        6. As a first time user, I want to be able to use the website on all devices.
+            - The website is responsive on all devices. The elements on the page adjust/resize automatically on different devices.
 
 
     -   #### Returning Visitor Goals
