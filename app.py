@@ -20,6 +20,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
+    # Search functionality being used
     search = request.args.get('search')
     if search:
         recipies = mongo.db.recipies.find(
@@ -30,11 +31,6 @@ def index():
         "index.html", title="Home Page", recipies=recipies)
 
 
-@app.route('/about')
-def about():
-    return render_template("about.html", title="About Us")
-
-
 @app.route('/user-login', methods=["POST", "GET"])
 def user_login():
     form = FormLogin()
@@ -43,6 +39,7 @@ def user_login():
             member_exists = mongo.db.members.find_one(
                 {"email": request.form.get("email").lower()})
 
+            # Check if member exists in database
             if member_exists:
                 if check_password_hash(
                         member_exists["password"], request.form.get(
@@ -67,6 +64,7 @@ def user_login():
 @app.route('/user-registration', methods=["POST", "GET"])
 def user_registration():
     form = FormRegister()
+    # Check if the form meets all criteria of validation
     if form.validate_on_submit():
         if request.method == "POST":
             member_exists = mongo.db.members.find_one(
@@ -91,6 +89,7 @@ def user_registration():
 
 @app.route('/my-profile')
 def my_profile():
+    # Display recipes contributed by the user itself
     name = mongo.db.members.find_one(
         {"email": session["member"]})["name"]
     members = mongo.db.members.find()
@@ -100,18 +99,10 @@ def my_profile():
         name=name, members=members, recipies=recipies)
 
 
-@app.route('/my-recipes')
-def my_recipes():
-    members = mongo.db.members.find()
-    recipies = mongo.db.recipies.find()
-    return render_template(
-        "my-recipes.html",
-        title="My Recipes", members=members, recipies=recipies)
-
-
 @app.route('/add_recipe', methods=["POST", "GET"])
 def add_recipe():
     form = FormRecipe()
+    # Check if the form meets all criteria of validation
     if form.validate_on_submit():
         if request.method == "POST":
             recipe_info = {
@@ -166,14 +157,6 @@ def recipe_detail(recipe_id):
         {"_id": ObjectId(recipe_id)})
     return render_template(
         "recipe-detail.html", title="Home Page", recipies=recipies)
-
-
-@app.route('/search-recipe', methods=["GET", "POST"])
-def search_recipe():
-    if request.method == "POST":
-        mongo.db.recipies.find()
-        flash("Your search results are displayed below:")
-        return redirect(url_for("index"))
 
 
 @app.route('/sort-ascending')
