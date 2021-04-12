@@ -70,6 +70,11 @@ The recipe website where you can view recipes and add your own.
 
 -   Database connectivity.
 
+## Project implementation
+
+-   The Homepage - Clicking on the website link directly points to the homepage where the user is presented with the hero-image af food items above where there is a navigation bar. On the navigation bar, the user is presented with the opportunity to login or sign up if unregistered. And below they can already view a list of recipes. They can get the recipe details when they click on the view button. In the homepage, they also have the ability to view content in a specific order or search for some recipe based on a keyword. 
+
+
 ## Technologies Used
 
 ### Languages Used
