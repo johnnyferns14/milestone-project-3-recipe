@@ -67,7 +67,13 @@ body{
 
 .align-space-top{
     margin-top: 2rem;
+    width: 50%;
 }
 
 
-
+@media screen and (max-width: 613px) {
+  .align-space-top{
+    margin-top: 2rem;
+    width: 75%;
+}
+}
