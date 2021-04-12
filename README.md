@@ -104,8 +104,8 @@ The recipe website where you can view recipes and add your own.
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](static/images/Recipe-Details.jpg)
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](static/images/Recipe-Details.jpg)
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](static/images/HTML-Validator.jpg)
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](static/images/CSS-validator.jpg)
 -   [PEP8 Compliance](http://pep8online.com/) - [Results](static/images/Pep8-compliance.jpg)
 
 ### Testing User Stories from User Experience (UX) Section
