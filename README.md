@@ -4,7 +4,7 @@
 
 The recipe website where you can view recipes and add your own.
  
-<h2 align="center"><img src=""></h2>
+<h2 align="center"><img src="./static/images/Food-House.jpg"></h2>
 
 ## User Experience (UX)
 
@@ -44,7 +44,7 @@ The recipe website where you can view recipes and add your own.
 
 -   ### Design
     -   #### Colour Scheme
-        -   The two main colours used are green and white with a beige addition to the cards.
+        -   The two main colours used are green and white with a beige addition to the cards. The colour green was chosen since food is something assoiated with nature (green shades) and it blends well with the food images.
     -   #### Typography
         -   The Baskervilles font has been used for this website as it helps to read the recipes more clearly. 
     -   #### Imagery
@@ -52,7 +52,7 @@ The recipe website where you can view recipes and add your own.
 
 *   ### Wireframes
 
-    -   Home Page Wireframe - [View]()
+    -   Home Page Wireframe - [View](https://github.com/johnnyferns14/milestone-project-3-recipe/tree/master/static/images/HOME.jpg)
 
     -   Mobile Wireframe - [View]()
 
