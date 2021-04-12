@@ -58,9 +58,9 @@ The recipe website where you can view recipes and add your own.
     -   My Profile Page Wireframe - [View](static/images/My-Profile.jpg)
     -   Recipe Details Page Wireframe - [View](static/images/Recipe-Details.jpg)
 
-    -   Mobile Wireframe - [View]()
+    -   Mobile Home Wireframes - [View](static/images/Mobile-Wireframes.jpg)
 
-    - Information: The above are wireframes that were designed in the initial process. But as the project went on, changes were made to make every content look better and more attractive.
+    - Information: The above wireframes were designed in the initial process. But as the project went on, changes were made to make every content look better and more attractive.
 
 ## Features
 
@@ -93,7 +93,7 @@ The recipe website where you can view recipes and add your own.
 6. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
 7. [Figma:](https://figma.com/)
-    - Figma was used to create the [wireframes](https://github.com/) during the design process.
+    - Figma was used to create the wireframes during the design process.
 8. [Flask:](https://flask.palletsprojects.com/)
     - Flask was the web framework used to build the web application.
 9. [MongoDB:](https://www.mongodb.com/)
@@ -104,8 +104,9 @@ The recipe website where you can view recipes and add your own.
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](static/images/Recipe-Details.jpg)
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](static/images/Recipe-Details.jpg)
+-   [PEP8 Compliance](http://pep8online.com/) - [Results](static/images/Pep8-compliance.jpg)
 
 ### Testing User Stories from User Experience (UX) Section
 
